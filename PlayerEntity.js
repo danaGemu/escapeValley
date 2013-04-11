@@ -49,8 +49,14 @@
                         this.vel.y = -10 * me.timer.tick;
                         this.jumping = true;
                     }
-                    else {
-                        this.flicker(45);
+                    else if (!this.flickering) {
+                        //this.kena();
+                        // BIKIN FUNCTION KENA DETEKSI MUSUH YANG BERBEDA
+                        // CARANYA PASSING ARGUMEN ke parameter KENA dengan jumlah damage dari tipe musuh
+                        // ex : if (res.obj.tipeMusuh == "musuh1") { this.kena(1);}
+                        if (res.obj.tipeMusuh == "musuh1") {
+                            this.kena(1);
+                        }
                     }
                 }
             }
@@ -79,5 +85,13 @@
                     this.setCurrentAnimation("diam");
                 }
             }
+        },
+
+        kena: function(damage) {
+            
+            me.game.HUD.updateItemValue("nyawa", -damage);
+            this.flicker(50);
+
         }
+
     });

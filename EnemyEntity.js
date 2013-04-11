@@ -15,6 +15,7 @@
 
         this.collidable = true;
         this.type = me.game.ENEMY_OBJECT;
+        this.tipeMusuh = "musuh1";
     },
 
     onCollision: function (res, obj) {
@@ -22,6 +23,7 @@
             this.flicker(45);
             //me.audio.play("stomp");
             //me.game.remove(this);
+            // TODO : Tambahin Skor
         }
     },
 

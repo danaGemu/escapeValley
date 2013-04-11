@@ -22,6 +22,8 @@
             this.flicker(45);
             //me.audio.play("stomp");
             //me.game.remove(this);
+            // TODO : Tambahin Skor
+            // BIKIN KURANGIN NYAWA 2 POIN
         }
     },
 

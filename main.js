@@ -50,6 +50,7 @@ var game = {
 
         me.entityPool.add("startPlayer", PlayerEntity);
         me.entityPool.add("Coin", CoinEntity);
+        me.entityPool.add("Nyawaa", NyawaEntity);
         me.entityPool.add("Musuh", EnemyEntity);
         me.entityPool.add("Musuh2", EnemyEntity2);
 
@@ -70,7 +71,8 @@ var PlayScreen = me.ScreenObject.extend(
 
         me.game.addHUD(0, 0, 480, 480);
 
-        me.game.HUD.addItem("skor", new ScoreObj(400, 25));
+        me.game.HUD.addItem("skor", new ScoreObj(410, 25));
+        me.game.HUD.addItem("nyawa", new NyawaObj(12, 10));
 
         me.input.bindKey(me.input.KEY.LEFT, "kiri");
         me.input.bindKey(me.input.KEY.RIGHT, "kanan");
