@@ -5,6 +5,9 @@
         },
 
         onCollision: function () {
+
+            me.game.HUD.updateItemValue("skor", 100);
+
             this.collidable = false;
             me.game.remove(this);
         }

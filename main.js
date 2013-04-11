@@ -11,6 +11,7 @@ var g_resources = [
     // CHARA SPRITESHEET
     { name: "player", type: "image", src: "data/chara/player.png" },
     { name: "goblin", type: "image", src: "data/chara/goblin.png" },
+    { name: "grue", type: "image", src: "data/chara/grue.png" },
 
     // HUD sprites
     { name: "coin", type: "image", src: "data/chara/coin.png" },
@@ -50,6 +51,7 @@ var game = {
         me.entityPool.add("startPlayer", PlayerEntity);
         me.entityPool.add("Coin", CoinEntity);
         me.entityPool.add("Musuh", EnemyEntity);
+        me.entityPool.add("Musuh2", EnemyEntity2);
 
         
 
@@ -65,6 +67,10 @@ var PlayScreen = me.ScreenObject.extend(
 
         if (!levelId) {
         }
+
+        me.game.addHUD(0, 0, 480, 480);
+
+        me.game.HUD.addItem("skor", new ScoreObj(400, 25));
 
         me.input.bindKey(me.input.KEY.LEFT, "kiri");
         me.input.bindKey(me.input.KEY.RIGHT, "kanan");
