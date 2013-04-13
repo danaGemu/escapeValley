@@ -15,6 +15,7 @@
 
         this.collidable = true;
         this.type = me.game.ENEMY_OBJECT;
+        this.tipeMusuh = "musuh2";
     },
 
     onCollision: function (res, obj) {

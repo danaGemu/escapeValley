@@ -10,16 +10,17 @@
         {
             if (this.value + val < 0)
             {
-                return false;
+                me.state.change(me.state.GAMEOVER);
             }
 
-            if (this.value + val <= 3)
+            if (this.value + val <= 5)
             {
                 return this.parent(val);
             }
             else
             {
-                me.game.HUD.updateItemValue("skor", 150);
+                me.game.HUD.updateItemValue("skor", 50);
+                me.gamestat.updateValue("totalSkor", 50);
             }
 
             return false;

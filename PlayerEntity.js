@@ -30,7 +30,7 @@
                 this.vel.x = 0;
                 this.cekAnimasi(false);
             }
-            if (me.input.isKeyPressed("lompat")) {
+            if (me.input.isKeyPressed("lompat") || me.input.isKeyPressed("lompat2")) {
                 if (!this.jumping && !this.falling) {
                     this.vel.y = -this.maxVel.y * me.timer.tick;
                     this.jumping = true;
@@ -54,8 +54,14 @@
                         // BIKIN FUNCTION KENA DETEKSI MUSUH YANG BERBEDA
                         // CARANYA PASSING ARGUMEN ke parameter KENA dengan jumlah damage dari tipe musuh
                         // ex : if (res.obj.tipeMusuh == "musuh1") { this.kena(1);}
-                        if (res.obj.tipeMusuh == "musuh1") {
-                            this.kena(1);
+                        switch (res.obj.tipeMusuh) {
+                            case "musuh1":
+                                this.kena(1);
+                                break;
+                            case "musuh2":
+                                this.kena(2);
+                                break;
+                            default: break;
                         }
                     }
                 }
@@ -87,11 +93,29 @@
             }
         },
 
-        kena: function(damage) {
-            
-            me.game.HUD.updateItemValue("nyawa", -damage);
-            this.flicker(50);
+        kena: function (damage) {
 
+            me.game.HUD.updateItemValue("nyawa", -damage);
+
+            if (me.game.HUD.getItemValue("nyawa") == 0) {
+                this.mati();
+            }
+            else {
+                this.flicker(50);
+            }
+
+        },
+
+       
+        mati: function () {
+            this.alive = false;
+            this.flipY(true);
+            this.forceJump();
+
+            this.flicker(40, function () { me.game.remove(this) });
+
+            me.state.change(me.state.GAMEOVER);
         }
+        
 
     });

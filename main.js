@@ -16,7 +16,13 @@ var g_resources = [
     // HUD sprites
     { name: "coin", type: "image", src: "data/chara/coin.png" },
     { name: "heart_big", type: "image", src: "data/chara/heart_big.png" },
-    { name: "heart_small", type: "image", src: "data/chara/heart_small.png" }
+    { name: "heart_small", type: "image", src: "data/chara/heart_small.png" },
+
+    // SCREENS
+    { name: "gameTitleScreen", type: "image", src: "data/screens/gameTitleScreen.png"},
+    { name: "gameOverScreen", type: "image", src: "data/screens/gameOverScreen.png" },
+    { name: "gameEndScreen", type: "image", src: "data/screens/gameEndScreen.png" }
+
 ];
 
 var game = {
@@ -46,7 +52,9 @@ var game = {
             BIKIN MAP BUAT PLAYSCREEN AWAL
         */
 
+        me.state.set(me.state.MENU, new TitleScreen());
         me.state.set(me.state.PLAY, new PlayScreen());
+        me.state.set(me.state.GAMEOVER, new GameOverScreen());
 
         me.entityPool.add("startPlayer", PlayerEntity);
         me.entityPool.add("Coin", CoinEntity);
@@ -54,9 +62,9 @@ var game = {
         me.entityPool.add("Musuh", EnemyEntity);
         me.entityPool.add("Musuh2", EnemyEntity2);
 
-        
+        me.gamestat.add("totalSkor", 0);
 
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };
 
@@ -77,11 +85,20 @@ var PlayScreen = me.ScreenObject.extend(
         me.input.bindKey(me.input.KEY.LEFT, "kiri");
         me.input.bindKey(me.input.KEY.RIGHT, "kanan");
         me.input.bindKey(me.input.KEY.X, "lompat", true);
+        me.input.bindKey(me.input.KEY.UP, "lompat2", true);
+
+        me.gamestat.reset();
 
         //me.debug.renderHitBox = true;
     },
 
     onDestroyEvent: function () {
+        me.input.unbindKey(me.input.KEY.LEFT);
+        me.input.unbindKey(me.input.KEY.RIGHT);
+        me.input.unbindKey(me.input.KEY.X);
+        me.input.unbindKey(me.input.KEY.UP);
+
+        me.game.disableHUD();
     }
 });
 

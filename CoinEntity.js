@@ -6,7 +6,8 @@
 
         onCollision: function () {
 
-            me.game.HUD.updateItemValue("skor", 100);
+            me.game.HUD.updateItemValue("skor", 10);
+            me.gamestat.updateValue("totalSkor", 10);
 
             this.collidable = false;
             me.game.remove(this);

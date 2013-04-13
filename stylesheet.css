@@ -5,7 +5,7 @@ body {
 
 #gamescreen {
     margin: 0px auto;
-	margin-top: 50px;
+	margin-top: 20px;
 	width: 480px;
 	height: 480px;
 	border: 5px solid #363636;
@@ -20,7 +20,12 @@ body {
 }
 
 .controls {
-	font-family: "Arial";
+	font-family: Georgia;
 	color: #C0C0C0;
 	text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: darkblue;
 }
