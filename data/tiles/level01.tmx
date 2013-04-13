@@ -56,6 +56,12 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
+  <object name="Musuh2" x="192" y="1280" width="128" height="32">
+   <properties>
+    <property name="image" value="grue"/>
+    <property name="spritewidth" value="56"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="foreground" width="15" height="70">
   <data encoding="base64">
