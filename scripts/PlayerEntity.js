@@ -1,7 +1,12 @@
 ﻿var PlayerEntity = me.ObjectEntity.extend(
     {
         init: function (x, y, settings) {
+            
+
+            settings.image = "player";
+            settings.spritewidth = 32;
             this.parent(x, y, settings);
+
             this.setVelocity(3, 15);
             this.updateColRect(5, 28, -1, 0);
 
@@ -46,7 +51,7 @@
                 if (res.obj.type == me.game.ENEMY_OBJECT) {
                     if ((res.y > 0) && !this.jumping) {
                         this.falling = false;
-                        this.vel.y = -10 * me.timer.tick;
+                        this.vel.y = -this.maxVel.y * me.timer.tick;
                         this.jumping = true;
                     }
                     else if (!this.flickering) {

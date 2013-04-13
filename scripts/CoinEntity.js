@@ -1,6 +1,9 @@
 ﻿var CoinEntity = me.CollectableEntity.extend(
     {
         init: function (x, y, settings) {
+
+            settings.image = "coin";
+            settings.spritewidth = 12;
             this.parent(x, y, settings);
         },
 

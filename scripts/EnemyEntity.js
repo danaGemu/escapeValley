@@ -1,9 +1,9 @@
 ﻿var EnemyEntity = me.ObjectEntity.extend(
 {
     init: function (x, y, settings) {
+
         settings.image = "goblin";
         settings.spritewidth = 32;
-
         this.parent(x, y, settings);
         this.startX = x;
         this.endX = x + settings.width - settings.spritewidth;
@@ -22,8 +22,10 @@
         if (this.alive && (res.y > 0) && obj.falling) {
             this.flicker(45);
             //me.audio.play("stomp");
-            //me.game.remove(this);
+            me.game.remove(this);
             // TODO : Tambahin Skor
+            me.game.HUD.updateItemValue("skor", 30);
+            me.gamestat.updateValue("totalSkor", 30);
         }
     },
 

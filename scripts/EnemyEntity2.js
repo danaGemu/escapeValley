@@ -1,9 +1,9 @@
 ﻿var EnemyEntity2 = me.ObjectEntity.extend(
 {
     init: function (x, y, settings) {
+
         settings.image = "grue";
         settings.spritewidth = 56;
-
         this.parent(x, y, settings);
         this.startX = x;
         this.endX = x + settings.width - settings.spritewidth;

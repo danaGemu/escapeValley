@@ -3,20 +3,23 @@
 var g_resources = [
     // LEVEL TILESETS
     { name: "tile_ground", type: "image", src: "data/tiles/tile_ground.png" },
-    { name: "tile_spikes", type: "image", src: "data/tiles/tile_spikes.png" },
+    { name: "tile_spikes", type: "image", src: "data/tiles/tile_spikes.png"},
     { name: "tile_surface", type: "image", src: "data/tiles/tile_surface.png" },
 
-    { name: "level01", type: "tmx", src: "data/tiles/level01.tmx"},
+    { name: "level01", type: "tmx", src: "data/tiles/level01.tmx" },
+    { name: "level02", type: "tmx", src: "data/tiles/level02.tmx"},
 
     // CHARA SPRITESHEET
     { name: "player", type: "image", src: "data/chara/player.png" },
     { name: "goblin", type: "image", src: "data/chara/goblin.png" },
     { name: "grue", type: "image", src: "data/chara/grue.png" },
+    { name: "spike", type: "image", src: "data/chara/spike.png"},
 
     // HUD sprites
     { name: "coin", type: "image", src: "data/chara/coin.png" },
     { name: "heart_big", type: "image", src: "data/chara/heart_big.png" },
     { name: "heart_small", type: "image", src: "data/chara/heart_small.png" },
+    { name: "chest", type: "image", src: "data/chara/chest.png"},
 
     // SCREENS
     { name: "gameTitleScreen", type: "image", src: "data/screens/gameTitleScreen.png"},
@@ -58,6 +61,8 @@ var game = {
 
         me.entityPool.add("startPlayer", PlayerEntity);
         me.entityPool.add("Coin", CoinEntity);
+        me.entityPool.add("Chest", ChestEntity);
+        me.entityPool.add("Spike", SpikeEntity);
         me.entityPool.add("Nyawaa", NyawaEntity);
         me.entityPool.add("Musuh", EnemyEntity);
         me.entityPool.add("Musuh2", EnemyEntity2);
@@ -70,12 +75,11 @@ var game = {
 
 var PlayScreen = me.ScreenObject.extend(
 {
-    onResetEvent: function (levelId) {
-        me.levelDirector.loadLevel(levelId || "level01");
-        game.levelid = levelId ? me.game.currentLevel.levelid : 0;
+    onResetEvent: function () {
+        me.levelDirector.loadLevel("level01");
+        //game.levelid = levelId ? me.game.currentLevel.levelid : 0;
 
-        if (!levelId) {
-        }
+        //if (!levelId) {}
 
         me.game.addHUD(0, 0, 480, 480);
 
