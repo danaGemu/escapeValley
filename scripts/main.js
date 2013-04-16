@@ -13,7 +13,8 @@ var g_resources = [
     { name: "player", type: "image", src: "data/chara/player.png" },
     { name: "goblin", type: "image", src: "data/chara/goblin.png" },
     { name: "grue", type: "image", src: "data/chara/grue.png" },
-    { name: "spike", type: "image", src: "data/chara/spike.png"},
+    { name: "spike", type: "image", src: "data/chara/spike.png" },
+    { name: "end_door", type: "image", src: "data/chara/end_door.png"},
 
     // HUD sprites
     { name: "coin", type: "image", src: "data/chara/coin.png" },
@@ -48,16 +49,13 @@ var game = {
 
         /* 
             TODO:
-            BIKIN PLAYSCREEN DAN CLASSNYA
-            BIKIN TITLESCREEN DAN CLASSNYA
-            BIKIN CREDITSCREEN DAN CLASSNYA
-            BIKIN LEVEL COMPLETE SCREEN DAN CLASSNYA
-            BIKIN MAP BUAT PLAYSCREEN AWAL
+            TAMBAHIN SOUND
         */
 
         me.state.set(me.state.MENU, new TitleScreen());
         me.state.set(me.state.PLAY, new PlayScreen());
         me.state.set(me.state.GAMEOVER, new GameOverScreen());
+        me.state.set(me.state.GAME_END, new GameEndScreen());
 
         me.entityPool.add("startPlayer", PlayerEntity);
         me.entityPool.add("Coin", CoinEntity);
@@ -66,6 +64,7 @@ var game = {
         me.entityPool.add("Nyawaa", NyawaEntity);
         me.entityPool.add("Musuh", EnemyEntity);
         me.entityPool.add("Musuh2", EnemyEntity2);
+        me.entityPool.add("endObj", GameEndObj);
 
         me.gamestat.add("totalSkor", 0);
 

@@ -3,7 +3,7 @@
         init: function (x, y, settings) {
 
             settings.image = "coin";
-            settings.spritewidth = 12;
+            settings.spritewidth = 32;
             this.parent(x, y, settings);
         },
 

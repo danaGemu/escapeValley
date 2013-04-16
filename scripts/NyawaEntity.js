@@ -2,7 +2,7 @@
     {
         init: function (x, y, settings) {
             settings.image = "heart_small";
-            settings.spritewidth = 18;
+            settings.spritewidth = 32;
             this.parent(x, y, settings);
         },
 

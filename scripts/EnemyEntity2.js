@@ -20,9 +20,11 @@
 
     onCollision: function (res, obj) {
         if (this.alive && (res.y > 0) && obj.falling) {
-            this.flicker(45);
+            
             //me.audio.play("stomp");
-            //me.game.remove(this);
+            me.game.HUD.updateItemValue("skor", 50);
+            me.gamestat.updateValue("totalSkor", 50);
+            me.game.remove(this);
             // TODO : Tambahin Skor
             // BIKIN KURANGIN NYAWA 2 POIN
         }
