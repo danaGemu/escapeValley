@@ -6,8 +6,9 @@
             settings.image = "player";
             settings.spritewidth = 32;
             this.parent(x, y, settings);
-
-            this.setVelocity(3, 15);
+            this.initialXVel = 3;
+            this.initialYVel = 15;
+            this.setVelocity(this.initialXVel, this.initialYVel);
             this.updateColRect(5, 28, -1, 0);
 
             this.animated = false;

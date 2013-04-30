@@ -5,9 +5,12 @@ var g_resources = [
     { name: "tile_ground", type: "image", src: "data/tiles/tile_ground.png" },
     { name: "tile_spikes", type: "image", src: "data/tiles/tile_spikes.png"},
     { name: "tile_surface", type: "image", src: "data/tiles/tile_surface.png" },
+    { name: "moving1", type: "image", src: "data/chara/moving1.png"},
+    { name: "moving2", type: "image", src: "data/chara/moving2.png"},
 
     { name: "level01", type: "tmx", src: "data/tiles/level01.tmx" },
-    { name: "level02", type: "tmx", src: "data/tiles/level02.tmx"},
+    { name: "level02", type: "tmx", src: "data/tiles/level02.tmx" },
+    { name: "level03", type: "tmx", src: "data/tiles/level03.tmx" },
 
     // CHARA SPRITESHEET
     { name: "player", type: "image", src: "data/chara/player.png" },
@@ -65,6 +68,8 @@ var game = {
         me.entityPool.add("Musuh", EnemyEntity);
         me.entityPool.add("Musuh2", EnemyEntity2);
         me.entityPool.add("endObj", GameEndObj);
+        me.entityPool.add("HoriPlat", MovingPlatform1);
+        me.entityPool.add("VertiPlat", MovingPlatform2);
 
         me.gamestat.add("totalSkor", 0);
 
