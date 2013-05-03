@@ -11,6 +11,7 @@ var g_resources = [
     { name: "level01", type: "tmx", src: "data/tiles/level01.tmx" },
     { name: "level02", type: "tmx", src: "data/tiles/level02.tmx" },
     { name: "level03", type: "tmx", src: "data/tiles/level03.tmx" },
+    { name: "level04", type: "tmx", src: "data/tiles/level04.tmx" },
 
     // CHARA SPRITESHEET
     { name: "player", type: "image", src: "data/chara/player.png" },

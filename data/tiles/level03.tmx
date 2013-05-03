@@ -221,6 +221,13 @@
   <object name="Coin" x="2176" y="672" width="32" height="32"/>
   <object name="Coin" x="2112" y="672" width="32" height="32"/>
   <object name="Coin" x="2240" y="672" width="32" height="32"/>
+  <object name="me.LevelEntity" x="192" y="1440" width="32" height="32">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="level04"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#ff0000" name="EnemyEntity" width="80" height="50">
   <object name="Spike" x="544" y="864" width="32" height="32"/>

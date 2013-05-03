@@ -11,7 +11,7 @@
         this.pos.x = x + settings.width - settings.spritewidth;
         this.walkLeft = true;
 
-        this.setVelocity(2, 6);
+        this.setVelocity(1.8, 6);
 
         this.collidable = true;
         this.type = me.game.ENEMY_OBJECT;
