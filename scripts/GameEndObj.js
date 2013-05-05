@@ -9,7 +9,10 @@
 
         onCollision: function (res, obj) {
             
-           me.state.change(me.state.GAME_END);
+            
+            me.state.change(me.state.GAME_END);
+            
+            game.persistent.player.level = "level01";
             
         }
     });

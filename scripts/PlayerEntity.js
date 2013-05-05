@@ -1,7 +1,19 @@
-﻿var PlayerEntity = me.ObjectEntity.extend(
+game.persistent = {
+    player: {
+        level: "level01",
+    },
+};
+
+
+var PlayerEntity = me.ObjectEntity.extend(
     {
         init: function (x, y, settings) {
             
+            
+            if (game.persistent.player.level != me.game.currentLevel.name)
+            {
+                game.persistent.player.level = me.game.currentLevel.name;
+            }
 
             settings.image = "player";
             settings.spritewidth = 32;

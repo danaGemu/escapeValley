@@ -11,12 +11,14 @@
             this.setCurrentAnimation("diam");
 
             this.updateColRect(10, 16, 16, 16);
+            
+            this.money = Math.floor(Math.random() * 100 + 50);
         },
 
         onCollision: function () {
 
-            me.game.HUD.updateItemValue("skor", 100);
-            me.gamestat.updateValue("totalSkor", 100);
+            me.game.HUD.updateItemValue("skor", this.money);
+            me.gamestat.updateValue("totalSkor", this.money);
             this.setCurrentAnimation("kebuka");
 
             this.collidable = false;

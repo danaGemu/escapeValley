@@ -12,6 +12,7 @@ var g_resources = [
     { name: "level02", type: "tmx", src: "data/tiles/level02.tmx" },
     { name: "level03", type: "tmx", src: "data/tiles/level03.tmx" },
     { name: "level04", type: "tmx", src: "data/tiles/level04.tmx" },
+    { name: "level05", type: "tmx", src: "data/tiles/level05.tmx" },
 
     // CHARA SPRITESHEET
     { name: "player", type: "image", src: "data/chara/player.png" },
@@ -35,7 +36,7 @@ var g_resources = [
 
 var game = {
 
-    levelid : 0,
+    //levelid : 0,
 
     onload: function () {
         if (!me.video.init('gamescreen', 480, 480, false, 1.0)) {
@@ -81,7 +82,7 @@ var game = {
 var PlayScreen = me.ScreenObject.extend(
 {
     onResetEvent: function () {
-        me.levelDirector.loadLevel("level01");
+        me.levelDirector.loadLevel(game.persistent.player.level);
         //game.levelid = levelId ? me.game.currentLevel.levelid : 0;
 
         //if (!levelId) {}

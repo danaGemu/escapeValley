@@ -22,7 +22,7 @@
 
         update: function () {
             if (me.input.isKeyPressed("enter")) {
-                me.state.change(me.state.MENU);
+                me.state.change(me.state.PLAY);
             }
 
             return true;
@@ -31,7 +31,7 @@
         draw: function (context) {
             context.drawImage(this.over, 0, 0);
 
-            this.font.draw(context, "PRESS ENTER TO PLAY AGAIN", 65, 240);
+            this.font.draw(context, "PRESS ENTER TO CONTINUE", 65, 240);
             this.font.draw(context, "FINAL SCORE", 160, 300);
             this.font.draw(context, this.total, 220, 350);
         },
