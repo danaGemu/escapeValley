@@ -22,6 +22,7 @@
         if (this.alive && (res.y > 0) && obj.falling) {
             
             //me.audio.play("stomp");
+            me.audio.play("hajar");
             me.game.HUD.updateItemValue("skor", 50);
             me.gamestat.updateValue("totalSkor", 50);
             me.game.remove(this);

@@ -30,7 +30,16 @@ var g_resources = [
     // SCREENS
     { name: "gameTitleScreen", type: "image", src: "data/screens/gameTitleScreen.png"},
     { name: "gameOverScreen", type: "image", src: "data/screens/gameOverScreen.png" },
-    { name: "gameEndScreen", type: "image", src: "data/screens/gameEndScreen.png" }
+    { name: "gameEndScreen", type: "image", src: "data/screens/gameEndScreen.png" },
+    
+    //AUDIO
+    { name: "Coin", type: "audio", src: "data/sfx/", channel: 2 },
+    { name: "Chest", type: "audio", src: "data/sfx/", channel: 1 },
+    { name: "Jump", type: "audio", src: "data/sfx/", channel: 1 },
+    { name: "dihajar", type: "audio", src: "data/sfx/", channel: 1 },
+    { name: "hajar", type: "audio", src: "data/sfx/", channel: 1},
+    { name: "Nyawa", type: "audio", src: "data/sfx/", channel: 1},
+    { name: "MusicLevel", type: "audio", src: "data/sfx/", channel: 1}
 
 ];
 
@@ -88,6 +97,7 @@ var PlayScreen = me.ScreenObject.extend(
         //if (!levelId) {}
 
         me.game.addHUD(0, 0, 480, 480);
+        me.audio.setVolume(0.3);
 
         me.game.HUD.addItem("skor", new ScoreObj(410, 25));
         me.game.HUD.addItem("nyawa", new NyawaObj(12, 10));
@@ -96,6 +106,8 @@ var PlayScreen = me.ScreenObject.extend(
         me.input.bindKey(me.input.KEY.RIGHT, "kanan");
         me.input.bindKey(me.input.KEY.X, "lompat", true);
         me.input.bindKey(me.input.KEY.UP, "lompat2", true);
+        
+        me.audio.playTrack("MusicLevel");
 
         me.gamestat.reset();
 
@@ -107,6 +119,8 @@ var PlayScreen = me.ScreenObject.extend(
         me.input.unbindKey(me.input.KEY.RIGHT);
         me.input.unbindKey(me.input.KEY.X);
         me.input.unbindKey(me.input.KEY.UP);
+        
+        me.audio.stopTrack();
 
         me.game.disableHUD();
     }

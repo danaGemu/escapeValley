@@ -8,6 +8,7 @@
 
         onCollision: function () {
             me.game.HUD.updateItemValue("nyawa", 1);
+            me.audio.play("Nyawa");
             this.collidable = false;
             me.game.remove(this);
         }

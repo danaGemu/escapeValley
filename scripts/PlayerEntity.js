@@ -53,6 +53,7 @@ var PlayerEntity = me.ObjectEntity.extend(
                     this.vel.y = -this.maxVel.y * me.timer.tick;
                     this.jumping = true;
                     this.setCurrentAnimation("lompat");
+                    me.audio.play("Jump");
                 }
             }
 
@@ -114,6 +115,7 @@ var PlayerEntity = me.ObjectEntity.extend(
         kena: function (damage) {
 
             me.game.HUD.updateItemValue("nyawa", -damage);
+            me.audio.play("dihajar");
 
             if (me.game.HUD.getItemValue("nyawa") == 0) {
                 this.mati();

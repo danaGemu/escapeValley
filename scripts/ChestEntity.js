@@ -19,6 +19,8 @@
 
             me.game.HUD.updateItemValue("skor", this.money);
             me.gamestat.updateValue("totalSkor", this.money);
+            
+            me.audio.play("Chest");
             this.setCurrentAnimation("kebuka");
 
             this.collidable = false;

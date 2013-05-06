@@ -22,10 +22,11 @@
         if (this.alive && (res.y > 0) && obj.falling) {
             
             //me.audio.play("stomp");
+            me.audio.play("hajar");
             me.game.remove(this);
             // TODO : Tambahin Skor
-            me.game.HUD.updateItemValue("skor", 30);
-            me.gamestat.updateValue("totalSkor", 30);
+            me.game.HUD.updateItemValue("skor", 20);
+            me.gamestat.updateValue("totalSkor", 20);
         }
     },
 
